@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import { styled } from '@mui/material/styles';
 import { Typography } from '@mui/material';
+
 import Dialog from '@mui/material/Dialog';
 import DialogTitle from '@mui/material/DialogTitle';
 import DialogContent from '@mui/material/DialogContent';
@@ -64,18 +65,23 @@ function App() {
     };
 
     return (
-        <div className="App">
-            <div className="header-title"> Efficientship - Computation parameters</div>
-            <Options handleLaunchComputation={handleLaunchComputation} />
-            {open && (
-                <BootstrapDialog onClose={handleClose} aria-labelledby="customized-dialog-title" open={open}>
-                    <BootstrapDialogTitle id="customized-dialog-title" onClose={handleClose}></BootstrapDialogTitle>
-                    <DialogContent dividers>
-                        <Typography variant="h3">Computation completed</Typography>
-                    </DialogContent>
-                </BootstrapDialog>
-            )}
-        </div>
+        <>
+            <div style={{ textAlign: 'center' }}>
+                <img alt="logo" height="350px" src={'../syroco-logo.png'} />
+            </div>
+            <div className="App">
+                <div className="header-title"> Efficientship - Computation parameters</div>
+                <Options handleLaunchComputation={handleLaunchComputation} />
+                {open && (
+                    <BootstrapDialog onClose={handleClose} aria-labelledby="customized-dialog-title" open={open}>
+                        <BootstrapDialogTitle id="customized-dialog-title" onClose={handleClose}></BootstrapDialogTitle>
+                        <DialogContent dividers>
+                            <Typography variant="h3">Computation completed</Typography>
+                        </DialogContent>
+                    </BootstrapDialog>
+                )}
+            </div>
+        </>
     );
 }
 
