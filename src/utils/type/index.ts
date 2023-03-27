@@ -3,7 +3,7 @@ export interface OptionType {
     name: string;
     photoUrL: string;
 }
-export interface OptionCategoryType {
+export interface CategoryType {
     id: string;
     name: string;
     items: OptionType[];
